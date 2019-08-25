@@ -1,7 +1,8 @@
 package com.example.demo.controllers;
 
 import java.util.Optional;
-
+//
+//import com.example.demo.Utils.LoggerUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,6 +48,7 @@ public class UserController {
 		cartRepository.save(cart);
 		user.setCart(cart);/////crt id.
 		userRepository.save(user);
+//		LoggerUtils.logMessage();
 		return ResponseEntity.ok(user);
 	}
 	

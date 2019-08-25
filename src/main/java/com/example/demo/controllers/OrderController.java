@@ -2,7 +2,7 @@ package com.example.demo.controllers;
 
 import java.util.List;
 
-import com.example.demo.service.SplunkService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.persistence.Cart;
 import com.example.demo.model.persistence.User;
-import com.example.demo.service.SplunkService;
+
 import com.example.demo.model.persistence.UserOrder;
 import com.example.demo.model.persistence.repositories.CartRepository;
 import com.example.demo.model.persistence.repositories.OrderRepository;
@@ -22,9 +22,6 @@ import com.example.demo.model.persistence.repositories.UserRepository;
 @RestController
 @RequestMapping("/api/order")
 public class OrderController {
-
-	@Autowired
-	SplunkService splunkService;
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -46,7 +43,6 @@ public class OrderController {
 	
 	@GetMapping("/history/{username}")
 	public ResponseEntity<List<UserOrder>> getOrdersForUser(@PathVariable String username) {
-		splunkService.service();
 		User user = userRepository.findByUsername(username);
 		if(user == null) {
 			return ResponseEntity.notFound().build();
