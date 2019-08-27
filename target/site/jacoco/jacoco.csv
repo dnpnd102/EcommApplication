@@ -1,10 +1,10 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-auth-course,com.example.demo.controllers,OrderController,6,35,2,2,2,9,2,3,0,3
-auth-course,com.example.demo.controllers,UserController,3,47,1,1,0,11,1,4,0,4
-auth-course,com.example.demo.controllers,ItemController,3,27,2,2,0,6,2,4,0,4
-auth-course,com.example.demo.controllers,CartController,12,93,0,8,0,23,2,7,2,3
-auth-course,com.example.demo.controllers,AuthenticationController,0,49,2,2,0,9,2,3,0,3
-auth-course,com.example.demo.service,JwtUserDetailsService,0,62,1,3,0,10,1,5,0,4
+auth-course,com.example.demo.controllers,OrderController,30,66,2,2,4,13,2,4,0,4
+auth-course,com.example.demo.controllers,UserController,3,65,1,1,0,14,1,5,0,5
+auth-course,com.example.demo.controllers,ItemController,7,39,4,4,1,9,4,5,0,5
+auth-course,com.example.demo.controllers,CartController,12,115,0,8,0,30,2,8,2,4
+auth-course,com.example.demo.controllers,AuthenticationController,0,60,2,2,0,11,2,4,0,4
+auth-course,com.example.demo.service,JwtUserDetailsService,0,69,1,3,0,12,1,6,0,5
 auth-course,com.example.demo.model.requests,CreateUserRequest,0,10,0,0,0,4,0,3,0,3
 auth-course,com.example.demo.model.requests,LoginRequest,0,17,0,0,0,7,0,5,0,5
 auth-course,com.example.demo.model.requests,ModifyCartRequest,4,20,0,0,2,8,1,6,1,6

@@ -2,6 +2,8 @@
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,26 +16,32 @@ import com.example.demo.model.persistence.repositories.ItemRepository;
 
 @RestController
 @RequestMapping(&quot;/api/item&quot;)
-<span class="fc" id="L17">public class ItemController {</span>
+<span class="fc" id="L19">public class ItemController {</span>
+<span class="fc" id="L20">	private static final Logger logger = LogManager.getLogger(ItemController.class);</span>
 
 	@Autowired
 	private ItemRepository itemRepository;
 	
 	@GetMapping
 	public ResponseEntity&lt;List&lt;Item&gt;&gt; getItems() {
-<span class="fc" id="L24">		return ResponseEntity.ok(itemRepository.findAll());</span>
+<span class="fc" id="L27">		return ResponseEntity.ok(itemRepository.findAll());</span>
 	}
 	
 	@GetMapping(&quot;/{id}&quot;)
 	public ResponseEntity&lt;Item&gt; getItemById(@PathVariable Long id) {
-<span class="fc" id="L29">		return ResponseEntity.of(itemRepository.findById(id));</span>
+<span class="fc" id="L32">		return ResponseEntity.of(itemRepository.findById(id));</span>
 	}
 	
 	@GetMapping(&quot;/name/{name}&quot;)
 	public ResponseEntity&lt;List&lt;Item&gt;&gt; getItemsByName(@PathVariable String name) {
-<span class="fc" id="L34">		List&lt;Item&gt; items = itemRepository.findByName(name);</span>
-<span class="pc bpc" id="L35" title="2 of 4 branches missed.">		return items == null || items.isEmpty() ? ResponseEntity.notFound().build()</span>
-<span class="fc" id="L36">				: ResponseEntity.ok(items);</span>
+<span class="fc" id="L37">		List&lt;Item&gt; items = itemRepository.findByName(name);</span>
+<span class="pc bpc" id="L38" title="2 of 4 branches missed.">		if (items == null || items.isEmpty()) {</span>
+<span class="nc" id="L39">			logger.error(&quot;No items found&quot;);</span>
+		} else {
+<span class="fc" id="L41">			logger.error(&quot;Items found&quot;);</span>
+		}
+<span class="pc bpc" id="L43" title="2 of 4 branches missed.">		return items == null || items.isEmpty() ? ResponseEntity.notFound().build()</span>
+<span class="fc" id="L44">				: ResponseEntity.ok(items);</span>
 			
 	}
 	

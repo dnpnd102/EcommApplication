@@ -3,6 +3,8 @@
 import java.util.Optional;
 //
 //import com.example.demo.Utils.LoggerUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +23,8 @@ import com.example.demo.model.requests.CreateUserRequest;
 
 @RestController
 @RequestMapping(&quot;/api/user&quot;)
-<span class="fc" id="L24">public class UserController {</span>
-	
+<span class="fc" id="L26">public class UserController {</span>
+<span class="fc" id="L27">	private static final Logger logger = LogManager.getLogger(UserController.class);</span>
 	@Autowired
 	private UserRepository userRepository;
 	
@@ -31,25 +33,26 @@ import com.example.demo.model.requests.CreateUserRequest;
 
 	@GetMapping(&quot;/id/{id}&quot;)
 	public ResponseEntity&lt;User&gt; findById(@PathVariable Long id) {
-<span class="fc" id="L34">		return ResponseEntity.of(userRepository.findById(id));</span>
+<span class="fc" id="L36">		return ResponseEntity.of(userRepository.findById(id));</span>
 	}
 	
 	@GetMapping(&quot;/{username}&quot;)
 	public ResponseEntity&lt;User&gt; findByUserName(@PathVariable String username) {
-<span class="fc" id="L39">		User user = userRepository.findByUsername(username);</span>
-<span class="pc bpc" id="L40" title="1 of 2 branches missed.">		return user == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(user);</span>
+<span class="fc" id="L41">		User user = userRepository.findByUsername(username);</span>
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">		return user == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(user);</span>
 	}
 	
 	@PostMapping(&quot;/create&quot;)
 	public ResponseEntity&lt;User&gt; createUser(@RequestBody CreateUserRequest createUserRequest) {
-<span class="fc" id="L45">		User user = new User();</span>
-<span class="fc" id="L46">		user.setUsername(createUserRequest.getUsername());</span>
-<span class="fc" id="L47">		Cart cart = new Cart();</span>
-<span class="fc" id="L48">		cartRepository.save(cart);</span>
-<span class="fc" id="L49">		user.setCart(cart);/////crt id.</span>
-<span class="fc" id="L50">		userRepository.save(user);</span>
-//		LoggerUtils.logMessage();
-<span class="fc" id="L52">		return ResponseEntity.ok(user);</span>
+<span class="fc" id="L47">		User user = new User();</span>
+<span class="fc" id="L48">		user.setUsername(createUserRequest.getUsername());</span>
+<span class="fc" id="L49">		logger.info(&quot;username : &quot;+createUserRequest.getUsername());</span>
+<span class="fc" id="L50">		Cart cart = new Cart();</span>
+<span class="fc" id="L51">		cartRepository.save(cart);</span>
+<span class="fc" id="L52">		user.setCart(cart);</span>
+<span class="fc" id="L53">		userRepository.save(user);</span>
+<span class="fc" id="L54">		logger.info(&quot;user created and saved to database&quot;);</span>
+<span class="fc" id="L55">		return ResponseEntity.ok(user);</span>
 	}
 	
 }

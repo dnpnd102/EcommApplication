@@ -1,5 +1,5 @@
-com/example/demo/UserControllerTest.class
 com/example/demo/JwtUserDetailServiceTest.class
+com/example/demo/UserControllerTest.class
 com/example/demo/CartControllerTest.class
 com/example/demo/ItemControllerTest.class
 com/example/demo/OrderControllerTest.class

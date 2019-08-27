@@ -2,9 +2,12 @@ package com.example.demo.service;
 
 import java.util.ArrayList;
 
+import com.example.demo.controllers.AuthenticationController;
 import com.example.demo.model.persistence.UserProfile;
 import com.example.demo.model.persistence.repositories.UserProfileRepository;
 import com.example.demo.model.requests.LoginRequest;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,6 +19,7 @@ import org.springframework.util.StringUtils;
 
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
+    private static final Logger logger = LogManager.getLogger(JwtUserDetailsService.class);
 
     @Autowired
     private UserProfileRepository userProfileRepository;
@@ -30,6 +34,7 @@ public class JwtUserDetailsService implements UserDetailsService {
             return new User(userProfile.getUsername(), userProfile.getPassword(),
                     new ArrayList<>());
         }else{
+            logger.error("User not found with username:");
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
     }
@@ -43,6 +48,7 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     public UserProfile getProfile(String userName){
         return userProfileRepository.findByUsername(userName);
+
     }
 
 }

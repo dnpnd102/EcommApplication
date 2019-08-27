@@ -3,6 +3,8 @@
 import java.util.List;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +23,8 @@ import com.example.demo.model.persistence.repositories.UserRepository;
 
 @RestController
 @RequestMapping(&quot;/api/order&quot;)
-<span class="fc" id="L24">public class OrderController {</span>
+<span class="fc" id="L26">public class OrderController {</span>
+<span class="fc" id="L27">	private static final Logger logger = LogManager.getLogger(OrderController.class);</span>
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -32,22 +35,27 @@ import com.example.demo.model.persistence.repositories.UserRepository;
 	
 	@PostMapping(&quot;/submit/{username}&quot;)
 	public ResponseEntity&lt;UserOrder&gt; submit(@PathVariable String username) {
-<span class="fc" id="L35">		User user = userRepository.findByUsername(username);</span>
-<span class="pc bpc" id="L36" title="1 of 2 branches missed.">		if(user == null) {</span>
-<span class="nc" id="L37">			return ResponseEntity.notFound().build();</span>
+<span class="fc" id="L38">		User user = userRepository.findByUsername(username);</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">		if(user == null) {</span>
+<span class="nc" id="L40">			logger.error(&quot;User &quot; + username + &quot; not available in database&quot;) ;</span>
+<span class="nc" id="L41">			return ResponseEntity.notFound().build();</span>
 		}
-<span class="fc" id="L39">		UserOrder order = UserOrder.createFromCart(user.getCart());</span>
-<span class="fc" id="L40">		orderRepository.save(order);</span>
-<span class="fc" id="L41">		return ResponseEntity.ok(order);</span>
+<span class="fc" id="L43">		logger.info(&quot;User &quot; + username + &quot; found in database&quot;) ;</span>
+<span class="fc" id="L44">		UserOrder order = UserOrder.createFromCart(user.getCart());</span>
+<span class="fc" id="L45">		orderRepository.save(order);</span>
+<span class="fc" id="L46">		logger.info(&quot;order saved to db&quot;);</span>
+<span class="fc" id="L47">		return ResponseEntity.ok(order);</span>
 	}
 	
 	@GetMapping(&quot;/history/{username}&quot;)
 	public ResponseEntity&lt;List&lt;UserOrder&gt;&gt; getOrdersForUser(@PathVariable String username) {
-<span class="fc" id="L46">		User user = userRepository.findByUsername(username);</span>
-<span class="pc bpc" id="L47" title="1 of 2 branches missed.">		if(user == null) {</span>
-<span class="nc" id="L48">			return ResponseEntity.notFound().build();</span>
+<span class="fc" id="L52">		User user = userRepository.findByUsername(username);</span>
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">		if(user == null) {</span>
+<span class="nc" id="L54">			logger.error(&quot;User &quot; + username + &quot; not found in database!&quot;) ;</span>
+<span class="nc" id="L55">			return ResponseEntity.notFound().build();</span>
 		}
-<span class="fc" id="L50">		return ResponseEntity.ok(orderRepository.findByUser(user));</span>
+<span class="fc" id="L57">		logger.info(&quot;User &quot; + username + &quot; found in database!&quot;) ;</span>
+<span class="fc" id="L58">		return ResponseEntity.ok(orderRepository.findByUser(user));</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

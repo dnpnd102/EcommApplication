@@ -3,6 +3,9 @@
 import java.util.Optional;
 import java.util.stream.IntStream;
 
+import com.example.demo.SareetaApplication;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +24,8 @@ import com.example.demo.model.requests.ModifyCartRequest;
 
 @RestController
 @RequestMapping(&quot;/api/cart&quot;)
-<span class="fc" id="L24">public class CartController {</span>
+<span class="fc" id="L27">public class CartController {</span>
+<span class="fc" id="L28">	private static final Logger logger = LogManager.getLogger(CartController.class);</span>
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -34,36 +38,42 @@ import com.example.demo.model.requests.ModifyCartRequest;
 	
 	@PostMapping(&quot;/addToCart&quot;)
 	public ResponseEntity&lt;Cart&gt; addTocart(@RequestBody ModifyCartRequest request) {
-<span class="fc" id="L37">		User user = userRepository.findByUsername(request.getUsername());</span>
-<span class="fc bfc" id="L38" title="All 2 branches covered.">		if(user == null) {</span>
-<span class="fc" id="L39">			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();</span>
+<span class="fc" id="L41">		User user = userRepository.findByUsername(request.getUsername());</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">		if(user == null) {</span>
+<span class="fc" id="L43">			logger.error(&quot;User not found in database&quot;);</span>
+<span class="fc" id="L44">			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();</span>
 		}
-<span class="fc" id="L41">		Optional&lt;Item&gt; item = itemRepository.findById(request.getItemId());</span>
-<span class="fc bfc" id="L42" title="All 2 branches covered.">		if(!item.isPresent()) {</span>
-<span class="fc" id="L43">			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();</span>
+<span class="fc" id="L46">		Optional&lt;Item&gt; item = itemRepository.findById(request.getItemId());</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">		if(!item.isPresent()) {</span>
+<span class="fc" id="L48">			logger.error(&quot;Item not found in database&quot;);</span>
+<span class="fc" id="L49">			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();</span>
 		}
-<span class="fc" id="L45">		Cart cart = user.getCart();</span>
-<span class="fc" id="L46">		IntStream.range(0, request.getQuantity())</span>
-<span class="pc" id="L47">			.forEach(i -&gt; cart.addItem(item.get()));</span>
-<span class="fc" id="L48">		cartRepository.save(cart);</span>
-<span class="fc" id="L49">		return ResponseEntity.ok(cart);</span>
+<span class="fc" id="L51">		Cart cart = user.getCart();</span>
+<span class="fc" id="L52">		IntStream.range(0, request.getQuantity())</span>
+<span class="pc" id="L53">			.forEach(i -&gt; cart.addItem(item.get()));</span>
+<span class="fc" id="L54">		cartRepository.save(cart);</span>
+<span class="fc" id="L55">		logger.info(&quot;Items added succesfully to cart&quot;);</span>
+<span class="fc" id="L56">		return ResponseEntity.ok(cart);</span>
 	}
 	
 	@PostMapping(&quot;/removeFromCart&quot;)
 	public ResponseEntity&lt;Cart&gt; removeFromcart(@RequestBody ModifyCartRequest request) {
-<span class="fc" id="L54">		User user = userRepository.findByUsername(request.getUsername());</span>
-<span class="fc bfc" id="L55" title="All 2 branches covered.">		if(user == null) {</span>
-<span class="fc" id="L56">			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();</span>
+<span class="fc" id="L61">		User user = userRepository.findByUsername(request.getUsername());</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">		if(user == null) {</span>
+<span class="fc" id="L63">			logger.error(&quot;User not found in database&quot;);</span>
+<span class="fc" id="L64">			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();</span>
 		}
-<span class="fc" id="L58">		Optional&lt;Item&gt; item = itemRepository.findById(request.getItemId());</span>
-<span class="fc bfc" id="L59" title="All 2 branches covered.">		if(!item.isPresent()) {</span>
-<span class="fc" id="L60">			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();</span>
+<span class="fc" id="L66">		Optional&lt;Item&gt; item = itemRepository.findById(request.getItemId());</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">		if(!item.isPresent()) {</span>
+<span class="fc" id="L68">			logger.error(&quot;Item not found in database&quot;);</span>
+<span class="fc" id="L69">			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();</span>
 		}
-<span class="fc" id="L62">		Cart cart = user.getCart();</span>
-<span class="fc" id="L63">		IntStream.range(0, request.getQuantity())</span>
-<span class="pc" id="L64">			.forEach(i -&gt; cart.removeItem(item.get()));</span>
-<span class="fc" id="L65">		cartRepository.save(cart);</span>
-<span class="fc" id="L66">		return ResponseEntity.ok(cart);</span>
+<span class="fc" id="L71">		Cart cart = user.getCart();</span>
+<span class="fc" id="L72">		IntStream.range(0, request.getQuantity())</span>
+<span class="pc" id="L73">			.forEach(i -&gt; cart.removeItem(item.get()));</span>
+<span class="fc" id="L74">		cartRepository.save(cart);</span>
+<span class="fc" id="L75">		logger.info(&quot;Items removed succesfully to cart&quot;);</span>
+<span class="fc" id="L76">		return ResponseEntity.ok(cart);</span>
 	}
 		
 }

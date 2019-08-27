@@ -1,0 +1,303 @@
+2019-08-27 12:51:55,686 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 5212 (D:\EcommApplication-all\target\classes started by Dinanath.Pandey in D:\EcommApplication-all)
+2019-08-27 12:51:55,686 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-27 12:51:55,686 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-27 12:52:01,489 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-27 12:52:02,596 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.659 seconds (JVM running for 9.611)
+2019-08-27 12:52:48,234 WARN c.e.d.c.JwtRequestFilter [http-nio-8090-exec-1] JWT Token does not begin with Bearer String
+2019-08-27 12:52:48,343 INFO c.e.d.c.AuthenticationController [http-nio-8090-exec-1] login request for registercom.example.demo.model.requests.LoginRequest@591ef4c7
+2019-08-27 12:52:48,517 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8090-exec-1] Unique index or primary key violation: "PUBLIC.UK_9551PIQ2WP9KH4KKET0WR65VT_INDEX_C ON PUBLIC.USER_PROFILE(USERNAME) VALUES 1"; SQL statement:
+insert into user_profile (id, password, username) values (null, ?, ?) [23505-199]
+2019-08-27 12:52:48,533 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8090-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint ["PUBLIC.UK_9551PIQ2WP9KH4KKET0WR65VT_INDEX_C ON PUBLIC.USER_PROFILE(USERNAME) VALUES 1"; SQL statement:
+insert into user_profile (id, password, username) values (null, ?, ?) [23505-199]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Unique index or primary key violation: "PUBLIC.UK_9551PIQ2WP9KH4KKET0WR65VT_INDEX_C ON PUBLIC.USER_PROFILE(USERNAME) VALUES 1"; SQL statement:
+insert into user_profile (id, password, username) values (null, ?, ?) [23505-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.get(DbException.java:205) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.message.DbException.get(DbException.java:181) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.index.BaseIndex.getDuplicateKeyException(BaseIndex.java:103) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVSecondaryIndex.checkUnique(MVSecondaryIndex.java:220) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVSecondaryIndex.add(MVSecondaryIndex.java:196) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.mvstore.db.MVTable.addRow(MVTable.java:546) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.command.dml.Insert.insertRows(Insert.java:180) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.command.dml.Insert.update(Insert.java:132) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.command.CommandContainer.update(CommandContainer.java:133) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.command.Command.executeUpdate(Command.java:267) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:200) ~[h2-1.4.199.jar:1.4.199]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:154) ~[h2-1.4.199.jar:1.4.199]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.2.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.2.0.jar:?]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:57) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:42) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3077) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3667) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:81) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:332) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:289) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:196) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:127) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:192) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:135) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:62) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:800) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:785) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_161]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:350) ~[spring-orm-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at com.sun.proxy.$Proxy108.persist(Unknown Source) ~[?:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_161]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:308) ~[spring-orm-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at com.sun.proxy.$Proxy108.persist(Unknown Source) ~[?:?]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:496) ~[spring-data-jpa-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_161]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:359) ~[spring-data-commons-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:200) ~[spring-data-commons-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:644) ~[spring-data-commons-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:608) ~[spring-data-commons-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lambda$invoke$3(RepositoryFactorySupport.java:595) ~[spring-data-commons-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:595) ~[spring-data-commons-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:59) ~[spring-data-commons-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295) ~[spring-tx-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) ~[spring-tx-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:138) ~[spring-data-jpa-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at com.sun.proxy.$Proxy110.save(Unknown Source) ~[?:?]
+	at com.example.demo.service.JwtUserDetailsService.save(JwtUserDetailsService.java:46) ~[classes/:?]
+	at com.example.demo.controllers.AuthenticationController.saveUser(AuthenticationController.java:48) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_161]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at com.example.demo.config.JwtRequestFilter.doFilterInternal(JwtRequestFilter.java:64) ~[classes/:?]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_161]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_161]
+2019-08-27 12:53:06,960 WARN c.e.d.c.JwtRequestFilter [http-nio-8090-exec-2] JWT Token does not begin with Bearer String
+2019-08-27 12:53:06,962 INFO c.e.d.c.AuthenticationController [http-nio-8090-exec-2] login request for registercom.example.demo.model.requests.LoginRequest@68d54d1d
+2019-08-27 12:54:17,365 WARN c.e.d.c.JwtRequestFilter [http-nio-8090-exec-5] JWT Token does not begin with Bearer String
+2019-08-27 12:54:17,374 INFO c.e.d.c.AuthenticationController [http-nio-8090-exec-5] authenticationRequest for  authenticate
+2019-08-27 12:54:17,976 INFO c.e.d.c.AuthenticationController [http-nio-8090-exec-5] token generated succesfully : eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6InVzZXIiLCJzdWIiOiJkaW5hIiwiaWF0IjoxNTY2ODkwNjU3LCJleHAiOjE1NjY5MDg2NTd9.HO83GSj1Ko3dk9copRBZNMV2_1M_tkaPpNRmGec4MCMEJf7UnS11XgC5-1fYEUoy6NZa1nZJZFi7aLxW49etRw
+2019-08-27 12:55:24,341 INFO c.e.d.c.UserController [http-nio-8090-exec-6] username : anand
+2019-08-27 12:55:24,356 INFO c.e.d.c.UserController [http-nio-8090-exec-6] user created and saved to database
+2019-08-27 12:55:41,626 INFO c.e.d.c.OrderController [http-nio-8090-exec-7] User anand found in database
+2019-08-27 12:55:41,642 INFO c.e.d.c.OrderController [http-nio-8090-exec-7] order saved to db
+2019-08-27 12:56:48,544 INFO c.e.d.c.CartController [http-nio-8090-exec-10] Items added succesfully to cart
+2019-08-27 12:57:11,508 ERROR c.e.d.c.ItemController [http-nio-8090-exec-1] Items found
+2019-08-27 12:58:04,879 ERROR c.e.d.c.OrderController [http-nio-8090-exec-2] User Round Widget not found in database!
+2019-08-27 12:58:11,356 ERROR c.e.d.c.ItemController [http-nio-8090-exec-4] Items found
+2019-08-27 12:58:46,075 INFO c.e.d.c.CartController [http-nio-8090-exec-5] Items removed succesfully to cart
+2019-08-27 13:01:35,369 INFO c.e.d.c.AuthenticationController [main] login request for registercom.example.demo.model.requests.LoginRequest@3d5009c0
+2019-08-27 13:01:35,457 INFO c.e.d.c.AuthenticationController [main] authenticationRequest for  authenticate
+2019-08-27 13:01:36,948 INFO c.e.d.c.AuthenticationController [main] token generated succesfully : eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6InVzZXIiLCJzdWIiOiJkaW5hIiwiaWF0IjoxNTY2ODkxMDk2LCJleHAiOjE1NjY5MDkwOTZ9.34Ddx_v2-_NPwbIknC4cyUtiSKTBY-EqEHa4cn_6Gbj8iREY3g0iiyRhgNYgcbsWKZPadRRKggQfsQjhLUflIw
+2019-08-27 13:01:37,354 INFO c.e.d.c.CartController [main] Items added succesfully to cart
+2019-08-27 13:01:37,357 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-27 13:01:37,359 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-27 13:01:37,360 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-27 13:01:37,363 INFO c.e.d.c.CartController [main] Items removed succesfully to cart
+2019-08-27 13:01:37,366 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-27 13:01:37,372 ERROR c.e.d.c.ItemController [main] Items found
+2019-08-27 13:01:37,541 ERROR c.e.d.s.JwtUserDetailsService [main] User not found with username:
+2019-08-27 13:01:37,720 INFO c.e.d.c.OrderController [main] User dina found in database
+2019-08-27 13:01:37,743 INFO c.e.d.c.OrderController [main] order saved to db
+2019-08-27 13:01:37,745 INFO c.e.d.c.OrderController [main] User dina found in database!
+2019-08-27 13:01:37,756 INFO c.e.d.c.UserController [main] username : dina
+2019-08-27 13:01:37,757 INFO c.e.d.c.UserController [main] user created and saved to database
+2019-08-27 16:38:58,443 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 5264 (D:\EcommApplication-all\target\classes started by Dinanath.Pandey in D:\EcommApplication-all)
+2019-08-27 16:38:58,452 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-27 16:38:58,453 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-27 16:39:04,369 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-27 16:39:05,390 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.571 seconds (JVM running for 9.59)
+2019-08-27 16:39:57,130 INFO c.e.d.c.AuthenticationController [main] login request for registercom.example.demo.model.requests.LoginRequest@3d5009c0
+2019-08-27 16:39:57,222 INFO c.e.d.c.AuthenticationController [main] authenticationRequest for  authenticate
+2019-08-27 16:39:58,729 INFO c.e.d.c.AuthenticationController [main] token generated succesfully : eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6InVzZXIiLCJzdWIiOiJkaW5hIiwiaWF0IjoxNTY2OTA0MTk3LCJleHAiOjE1NjY5MjIxOTd9.ie2ErVFirpXM6ek8o57TDVGTzw8K1SEowDoghgwzprxcebLxlQzdnlYYJ2aIp8hAbjwv6BeT7Tre80imB6SGfg
+2019-08-27 16:39:59,191 INFO c.e.d.c.CartController [main] Items added succesfully to cart
+2019-08-27 16:39:59,193 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-27 16:39:59,195 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-27 16:39:59,197 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-27 16:39:59,199 INFO c.e.d.c.CartController [main] Items removed succesfully to cart
+2019-08-27 16:39:59,201 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-27 16:39:59,205 ERROR c.e.d.c.ItemController [main] Items found
+2019-08-27 16:39:59,295 ERROR c.e.d.s.JwtUserDetailsService [main] User not found with username:
+2019-08-27 16:39:59,384 INFO c.e.d.c.OrderController [main] User dina found in database
+2019-08-27 16:39:59,398 INFO c.e.d.c.OrderController [main] order saved to db
+2019-08-27 16:39:59,400 INFO c.e.d.c.OrderController [main] User dina found in database!
+2019-08-27 16:39:59,408 INFO c.e.d.c.UserController [main] username : dina
+2019-08-27 16:39:59,408 INFO c.e.d.c.UserController [main] user created and saved to database
+
+2019-08-27 16:51:20,845 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 2932 (D:\EcommApplication-all\target\classes started by Dinanath.Pandey in D:\EcommApplication-all)
+2019-08-27 16:51:20,853 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-27 16:51:20,853 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-27 16:51:26,991 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-27 16:51:28,245 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 8.212 seconds (JVM running for 10.515)
+2019-08-27 16:51:32,862 WARN c.e.d.c.JwtRequestFilter [http-nio-8090-exec-4] JWT Token does not begin with Bearer String
+2019-08-27 16:51:33,055 INFO c.e.d.c.AuthenticationController [http-nio-8090-exec-4] login request for registercom.example.demo.model.requests.LoginRequest@73e2a222
+2019-08-27 17:05:52,638 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 4760 (D:\EcommApplication-all\target\classes started by Dinanath.Pandey in D:\EcommApplication-all)
+2019-08-27 17:05:52,645 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-27 17:05:52,645 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-27 17:05:58,460 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-27 17:05:59,477 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.445 seconds (JVM running for 9.34)
+2019-08-27 17:18:56,689 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 5048 (D:\EcommApplication-all\target\classes started by Dinanath.Pandey in D:\EcommApplication-all)
+2019-08-27 17:18:56,698 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-27 17:18:56,699 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-27 17:19:02,368 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-27 17:19:03,442 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.346 seconds (JVM running for 9.393)
+2019-08-27 22:08:32,255 INFO c.e.d.c.AuthenticationController [main] login request for registercom.example.demo.model.requests.LoginRequest@68044f4
+2019-08-27 22:09:14,710 INFO c.e.d.c.AuthenticationController [main] login request for registercom.example.demo.model.requests.LoginRequest@3d5009c0
+2019-08-27 22:09:14,789 INFO c.e.d.c.AuthenticationController [main] authenticationRequest for  authenticate
+2019-08-27 22:09:16,234 INFO c.e.d.c.AuthenticationController [main] token generated succesfully : eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6InVzZXIiLCJzdWIiOiJkaW5hIiwiaWF0IjoxNTY2OTIzOTU1LCJleHAiOjE1NjY5NDE5NTV9.1JNz1vmzY0a3ySutojs9fn2JFdPtMuMXwyoyYLlsIaez-t-MV2xhNqPxO3ZiOVB6eWKv_ob_jrQ3AkpSMrTfcg
+2019-08-27 22:09:16,621 INFO c.e.d.c.CartController [main] Items added succesfully to cart
+2019-08-27 22:09:16,623 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-27 22:09:16,625 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-27 22:09:16,627 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-27 22:09:16,630 INFO c.e.d.c.CartController [main] Items removed succesfully to cart
+2019-08-27 22:09:16,632 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-27 22:09:16,637 ERROR c.e.d.c.ItemController [main] Items found
+2019-08-27 22:09:16,757 ERROR c.e.d.s.JwtUserDetailsService [main] User not found with username:
+2019-08-27 22:09:16,839 INFO c.e.d.c.OrderController [main] User dina found in database
+2019-08-27 22:09:16,845 INFO c.e.d.c.OrderController [main] order saved to db
+2019-08-27 22:09:16,847 INFO c.e.d.c.OrderController [main] User dina found in database!
+2019-08-27 22:09:16,855 INFO c.e.d.c.UserController [main] username : dina
+2019-08-27 22:09:16,856 INFO c.e.d.c.UserController [main] user created and saved to database
+2019-08-28 00:08:45,615 INFO c.e.d.c.AuthenticationController [main] login request for registercom.example.demo.model.requests.LoginRequest@68044f4
+2019-08-28 00:09:02,956 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 2804 (D:\EcommApplication-all\target\classes started by Dinanath.Pandey in D:\EcommApplication-all)
+2019-08-28 00:09:02,966 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 00:09:02,967 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 00:09:09,136 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 00:09:10,172 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.808 seconds (JVM running for 9.79)
+2019-08-28 00:31:00,738 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 1512 (D:\EcommApplication-all\target\classes started by Dinanath.Pandey in D:\EcommApplication-all)
+2019-08-28 00:31:00,751 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 00:31:00,752 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 00:31:06,492 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 00:31:07,549 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.469 seconds (JVM running for 9.327)
+2019-08-28 00:53:23,086 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on dinanath-Satellite-Pro-B40-A with PID 28198 (/home/dinanath/Downloads/EcommApplication/target/classes started by dinanath in /home/dinanath/Downloads/EcommApplication)
+2019-08-28 00:53:23,101 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 00:53:23,103 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 00:53:27,399 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 00:53:28,462 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 6.195 seconds (JVM running for 7.877)
+2019-08-28 00:53:59,249 ERROR c.e.d.s.JwtUserDetailsService [main] User not found with username:
+2019-08-28 00:53:59,760 INFO c.e.d.c.UserController [main] username : dina
+2019-08-28 00:53:59,763 INFO c.e.d.c.UserController [main] user created and saved to database
+2019-08-28 00:53:59,863 ERROR c.e.d.c.ItemController [main] Items found
+2019-08-28 00:54:00,035 INFO c.e.d.c.AuthenticationController [main] login request for registercom.example.demo.model.requests.LoginRequest@4a0e3bd
+2019-08-28 00:54:00,045 INFO c.e.d.c.AuthenticationController [main] authenticationRequest for  authenticate
+2019-08-28 00:54:00,831 INFO c.e.d.c.AuthenticationController [main] token generated succesfully : eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6InVzZXIiLCJzdWIiOiJkaW5hIiwiaWF0IjoxNTY2OTMzODQwLCJleHAiOjE1NjY5NTE4NDB9.FbkMpDUZtkAYTEDfAH6W_1zXoGD5wSpBc-E81S2vUwdHYIhtb0iBF2FFRwnvKkbjIxNgum0t0C3nOD24SlLopA
+2019-08-28 00:54:00,848 INFO c.e.d.c.CartController [main] Items added succesfully to cart
+2019-08-28 00:54:00,851 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-28 00:54:00,854 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-28 00:54:00,860 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-28 00:54:00,864 INFO c.e.d.c.CartController [main] Items removed succesfully to cart
+2019-08-28 00:54:00,868 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-28 00:54:00,999 INFO c.e.d.c.OrderController [main] User dina found in database
+2019-08-28 00:54:01,012 INFO c.e.d.c.OrderController [main] order saved to db
+2019-08-28 00:54:01,016 INFO c.e.d.c.OrderController [main] User dina found in database!
+2019-08-28 00:55:06,202 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on dinanath-Satellite-Pro-B40-A with PID 28487 (/home/dinanath/Downloads/EcommApplication/target/classes started by dinanath in /home/dinanath/Downloads/EcommApplication)
+2019-08-28 00:55:06,213 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 00:55:06,215 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 00:55:10,230 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 00:55:11,290 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 5.893 seconds (JVM running for 7.635)
