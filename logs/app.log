@@ -301,3 +301,24 @@ insert into user_profile (id, password, username) values (null, ?, ?) [23505-199
 2019-08-28 00:55:06,215 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
 2019-08-28 00:55:10,230 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
 2019-08-28 00:55:11,290 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 5.893 seconds (JVM running for 7.635)
+2019-08-28 01:05:46,486 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on dinanath-Satellite-Pro-B40-A with PID 29507 (/home/dinanath/Downloads/EcommApplication/target/classes started by dinanath in /home/dinanath/Downloads/EcommApplication)
+2019-08-28 01:05:46,499 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 01:05:46,500 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 01:05:50,975 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 01:05:52,070 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 6.312 seconds (JVM running for 8.127)
+2019-08-28 01:06:17,517 ERROR c.e.d.s.JwtUserDetailsService [main] User not found with username:
+2019-08-28 01:06:17,972 INFO c.e.d.c.UserController [main] username : dina
+2019-08-28 01:06:17,973 INFO c.e.d.c.UserController [main] user created and saved to database
+2019-08-28 01:06:18,085 ERROR c.e.d.c.ItemController [main] Items found
+2019-08-28 01:06:18,178 INFO c.e.d.c.AuthenticationController [main] login request for registercom.example.demo.model.requests.LoginRequest@4a0e3bd
+2019-08-28 01:06:18,182 INFO c.e.d.c.AuthenticationController [main] authenticationRequest for  authenticate
+2019-08-28 01:06:18,877 INFO c.e.d.c.AuthenticationController [main] token generated succesfully : eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6InVzZXIiLCJzdWIiOiJkaW5hIiwiaWF0IjoxNTY2OTM0NTc4LCJleHAiOjE1NjY5NTI1Nzh9.szdyPKpJWW9vVYUMU33PAzthK0P54wKYF8kbHxvdZDQMSfmf_f3x_gmhQXSp_-Ok9u6CPZPJE3fJLWOS7aw01w
+2019-08-28 01:06:18,895 INFO c.e.d.c.CartController [main] Items added succesfully to cart
+2019-08-28 01:06:18,898 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-28 01:06:18,901 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-28 01:06:18,904 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-28 01:06:18,909 INFO c.e.d.c.CartController [main] Items removed succesfully to cart
+2019-08-28 01:06:18,912 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-28 01:06:19,032 INFO c.e.d.c.OrderController [main] User dina found in database
+2019-08-28 01:06:19,040 INFO c.e.d.c.OrderController [main] order saved to db
+2019-08-28 01:06:19,043 INFO c.e.d.c.OrderController [main] User dina found in database!
