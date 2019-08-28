@@ -322,3 +322,13 @@ insert into user_profile (id, password, username) values (null, ?, ?) [23505-199
 2019-08-28 01:06:19,032 INFO c.e.d.c.OrderController [main] User dina found in database
 2019-08-28 01:06:19,040 INFO c.e.d.c.OrderController [main] order saved to db
 2019-08-28 01:06:19,043 INFO c.e.d.c.OrderController [main] User dina found in database!
+2019-08-28 10:31:35,679 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 6300 (D:\EcommApplication\target\classes started by Dinanath.Pandey in D:\EcommApplication)
+2019-08-28 10:31:35,686 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 10:31:35,687 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 10:31:41,355 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 10:31:42,389 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.26 seconds (JVM running for 9.456)
+2019-08-28 10:40:37,738 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 6628 (D:\EcommApplication\target\classes started by Dinanath.Pandey in D:\EcommApplication)
+2019-08-28 10:40:37,746 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 10:40:37,747 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 10:40:43,699 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 10:40:44,781 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.653 seconds (JVM running for 9.525)
