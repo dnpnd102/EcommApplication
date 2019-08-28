@@ -58,6 +58,15 @@ public class UserControllerTest {
     }
 
     @Test
+    public void findByUserNameNULL(){
+        User user = new User();
+        user.setId(12);
+        Mockito.when(userRepository.findByUsername("dina")).thenReturn(null);
+        ResponseEntity<?> responseEntity = userController.findByUserName("dina");
+        Assert.assertTrue(404 == responseEntity.getStatusCodeValue());
+    }
+
+    @Test
     public void createUser(){
         CreateUserRequest createUserRequest = new CreateUserRequest();
         createUserRequest.setUsername("dina");

@@ -66,6 +66,31 @@ public class OrderControllerTest {
     }
 
     @Test
+    public void submitNULL(){
+        ModifyCartRequest modifyCartRequest = new ModifyCartRequest();
+        modifyCartRequest.setItemId(12);
+        modifyCartRequest.setUsername("dina");
+        User user = new User();
+        user.setId(12);
+        Cart cart = new Cart();
+        cart.setId(new Long(12));
+        Item item = new Item();
+        item.setDescription("item is hot");
+        List<Item> items = new ArrayList<>();
+        items.add(item);
+        cart.setItems(items);
+        user.setCart(cart);
+        UserOrder userOrder = new UserOrder();
+        userOrder.setId(new Long(12));
+        userOrder.setUser(user);
+
+        Mockito.when(userRepository.findByUsername("dina")).thenReturn(null);
+        Mockito.when(orderRepository.save(userOrder)).thenReturn(userOrder);
+        ResponseEntity<UserOrder> responseEntity = orderController.submit("dina");
+        Assert.assertTrue(404 == responseEntity.getStatusCodeValue());
+    }
+
+    @Test
     public void getOrdersForUser(){
         ModifyCartRequest modifyCartRequest = new ModifyCartRequest();
         modifyCartRequest.setItemId(12);
@@ -88,6 +113,31 @@ public class OrderControllerTest {
         Mockito.when(orderRepository.findByUser(user)).thenReturn(userOrders);
         ResponseEntity<List<UserOrder>> responseEntity = orderController.getOrdersForUser("dina");
         Assert.assertTrue(200 == responseEntity.getStatusCodeValue());
+    }
+
+    @Test
+    public void getOrdersForUserNULL(){
+        ModifyCartRequest modifyCartRequest = new ModifyCartRequest();
+        modifyCartRequest.setItemId(12);
+        modifyCartRequest.setUsername("dina");
+        User user = new User();
+        user.setId(12);
+        Cart cart = new Cart();
+        cart.setId(new Long(12));
+        Item item = new Item();
+        item.setDescription("item is hot");
+        List<Item> items = new ArrayList<>();
+        items.add(item);
+        cart.setItems(items);
+        user.setCart(cart);
+        UserOrder userOrder = new UserOrder();
+        userOrder.setId(new Long(12));
+        userOrder.setUser(user);
+        List<UserOrder> userOrders = new ArrayList<>();
+        Mockito.when(userRepository.findByUsername("dina")).thenReturn(null);
+        Mockito.when(orderRepository.findByUser(user)).thenReturn(userOrders);
+        ResponseEntity<List<UserOrder>> responseEntity = orderController.getOrdersForUser("dina");
+        Assert.assertTrue(404 == responseEntity.getStatusCodeValue());
     }
 
 }

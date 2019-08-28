@@ -337,3 +337,100 @@ insert into user_profile (id, password, username) values (null, ?, ?) [23505-199
 2019-08-28 10:44:34,184 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
 2019-08-28 10:44:39,955 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
 2019-08-28 10:44:41,030 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.444 seconds (JVM running for 9.385)
+2019-08-28 11:27:55,295 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 1720 (D:\EcommApplication\target\classes started by Dinanath.Pandey in D:\EcommApplication)
+2019-08-28 11:27:55,306 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 11:27:55,308 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 11:28:01,276 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 11:28:02,659 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 8.014 seconds (JVM running for 10.473)
+2019-08-28 11:41:00,882 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 5676 (D:\EcommApplication\target\classes started by Dinanath.Pandey in D:\EcommApplication)
+2019-08-28 11:41:00,892 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 11:41:00,894 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 11:41:07,176 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 11:41:08,221 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.822 seconds (JVM running for 10.077)
+2019-08-28 11:43:02,639 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 2644 (D:\EcommApplication\target\classes started by Dinanath.Pandey in D:\EcommApplication)
+2019-08-28 11:43:02,646 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 11:43:02,647 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 11:43:08,799 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 11:43:10,053 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 8.083 seconds (JVM running for 9.984)
+2019-08-28 11:43:27,523 WARN c.e.d.c.JwtRequestFilter [http-nio-8090-exec-1] JWT Token does not begin with Bearer String
+2019-08-28 11:43:27,762 INFO c.e.d.c.AuthenticationController [http-nio-8090-exec-1] login request for registercom.example.demo.model.requests.LoginRequest@74d83235
+2019-08-28 11:44:27,503 WARN c.e.d.c.JwtRequestFilter [http-nio-8090-exec-2] JWT Token does not begin with Bearer String
+2019-08-28 11:44:27,509 INFO c.e.d.c.AuthenticationController [http-nio-8090-exec-2] authenticationRequest for  authenticate
+2019-08-28 11:44:28,414 INFO c.e.d.c.AuthenticationController [http-nio-8090-exec-2] token generated succesfully : eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6InVzZXIiLCJzdWIiOiJkaW5hIiwiaWF0IjoxNTY2OTcyODY3LCJleHAiOjE1NjY5OTA4Njd9.CO3w5QYUHv8427rJbBFLfMtX1Sz62hs4HdWUiD2RM3QVzu3MmNEdp67hUvzMgz_SxlUEHGcGf0DBGxr0fJJEKg
+2019-08-28 11:46:51,870 INFO c.e.d.c.AuthenticationController [main] login request for registercom.example.demo.model.requests.LoginRequest@5fb392e
+2019-08-28 11:46:51,933 INFO c.e.d.c.AuthenticationController [main] authenticationRequest for  authenticate
+2019-08-28 11:46:53,413 INFO c.e.d.c.AuthenticationController [main] token generated succesfully : eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6InVzZXIiLCJzdWIiOiJkaW5hIiwiaWF0IjoxNTY2OTczMDEyLCJleHAiOjE1NjY5OTEwMTJ9.KbnIUXv3OxBC4TBgMTPtwnA3thLV7oJZ9w-iFEA7lqdTxjOsEvc6bAtVCGKhOfRm0tXNSIUpJPbjbBFT44hC9Q
+2019-08-28 11:46:53,824 INFO c.e.d.c.CartController [main] Items added succesfully to cart
+2019-08-28 11:46:53,839 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-28 11:46:53,839 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-28 11:46:53,839 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-28 11:46:53,839 INFO c.e.d.c.CartController [main] Items removed succesfully to cart
+2019-08-28 11:46:53,839 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-28 11:46:53,855 ERROR c.e.d.c.ItemController [main] Items found
+2019-08-28 11:46:54,071 WARN c.e.d.c.JwtRequestFilter [main] JWT Token does not begin with Bearer String
+2019-08-28 11:46:54,303 ERROR c.e.d.s.JwtUserDetailsService [main] User not found with username:
+2019-08-28 11:46:54,408 INFO c.e.d.c.OrderController [main] User dina found in database
+2019-08-28 11:46:54,416 INFO c.e.d.c.OrderController [main] order saved to db
+2019-08-28 11:46:54,418 INFO c.e.d.c.OrderController [main] User dina found in database!
+2019-08-28 11:46:54,426 INFO c.e.d.c.UserController [main] username : dina
+2019-08-28 11:46:54,428 INFO c.e.d.c.UserController [main] user created and saved to database
+2019-08-28 11:55:44,224 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 6872 (D:\EcommApplication\target\classes started by Dinanath.Pandey in D:\EcommApplication)
+2019-08-28 11:55:44,233 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 11:55:44,234 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 11:55:50,296 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 11:55:51,424 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.947 seconds (JVM running for 9.803)
+2019-08-28 11:56:23,302 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 1772 (D:\EcommApplication\target\classes started by Dinanath.Pandey in D:\EcommApplication)
+2019-08-28 11:56:23,311 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 11:56:23,312 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 11:56:28,834 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 11:56:29,841 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.217 seconds (JVM running for 9.078)
+2019-08-28 11:57:25,356 INFO c.e.d.c.AuthenticationController [main] login request for registercom.example.demo.model.requests.LoginRequest@47bcd95a
+2019-08-28 11:57:25,454 INFO c.e.d.c.AuthenticationController [main] authenticationRequest for  authenticate
+2019-08-28 11:57:26,831 INFO c.e.d.c.AuthenticationController [main] token generated succesfully : eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6InVzZXIiLCJzdWIiOiJkaW5hIiwiaWF0IjoxNTY2OTczNjQ2LCJleHAiOjE1NjY5OTE2NDZ9.x55NQM2R6hUA7F1Ye_t2l__i54rpXZTzlenDFMzfYp__KPaONuneNFYwy_RtFK1UGAUKxrAz-ruQyxGmUEivVA
+2019-08-28 11:57:27,215 INFO c.e.d.c.CartController [main] Items added succesfully to cart
+2019-08-28 11:57:27,218 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-28 11:57:27,221 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-28 11:57:27,223 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-28 11:57:27,225 INFO c.e.d.c.CartController [main] Items removed succesfully to cart
+2019-08-28 11:57:27,228 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-28 11:57:27,233 ERROR c.e.d.c.ItemController [main] Items found
+2019-08-28 11:57:27,237 ERROR c.e.d.c.ItemController [main] No items found
+2019-08-28 11:57:27,437 WARN c.e.d.c.JwtRequestFilter [main] JWT Token does not begin with Bearer String
+2019-08-28 11:57:27,668 ERROR c.e.d.s.JwtUserDetailsService [main] User not found with username:
+2019-08-28 11:57:27,762 ERROR c.e.d.c.OrderController [main] User dina not available in database
+2019-08-28 11:57:27,764 INFO c.e.d.c.OrderController [main] User dina found in database
+2019-08-28 11:57:27,773 INFO c.e.d.c.OrderController [main] order saved to db
+2019-08-28 11:57:27,775 INFO c.e.d.c.OrderController [main] User dina found in database!
+2019-08-28 11:57:27,776 ERROR c.e.d.c.OrderController [main] User dina not found in database!
+2019-08-28 11:57:27,785 INFO c.e.d.c.UserController [main] username : dina
+2019-08-28 11:57:27,785 INFO c.e.d.c.UserController [main] user created and saved to database
+2019-08-28 14:32:11,860 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 3416 (D:\EcommApplication\target\classes started by Dinanath.Pandey in D:\EcommApplication)
+2019-08-28 14:32:11,870 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 14:32:11,871 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 14:32:18,023 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 14:32:19,072 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.845 seconds (JVM running for 9.739)
+2019-08-28 14:32:27,128 WARN c.e.d.c.JwtRequestFilter [http-nio-8090-exec-1] JWT Token does not begin with Bearer String
+2019-08-28 14:32:27,316 INFO c.e.d.c.AuthenticationController [http-nio-8090-exec-1] login request for registercom.example.demo.model.requests.LoginRequest@7b9423a1
+2019-08-28 14:32:31,051 WARN c.e.d.c.JwtRequestFilter [http-nio-8090-exec-2] JWT Token does not begin with Bearer String
+2019-08-28 14:32:31,058 INFO c.e.d.c.AuthenticationController [http-nio-8090-exec-2] authenticationRequest for  authenticate
+2019-08-28 14:32:31,686 INFO c.e.d.c.AuthenticationController [http-nio-8090-exec-2] token generated succesfully : eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6InVzZXIiLCJzdWIiOiJkaW5hIiwiaWF0IjoxNTY2OTgyOTUxLCJleHAiOjE1NjcwMDA5NTF9.5OEzuI-ors2G_BhX1ZDADWHAM8M9W3W5eiSuZ37gSyICtsl7fSU2u4InqFi78Ao68w5gqKF4DlVMDx9JEXbhoA
+2019-08-28 14:33:24,041 INFO c.e.d.c.AuthenticationController [main] login request for registercom.example.demo.model.requests.LoginRequest@47bcd95a
+2019-08-28 14:33:24,124 INFO c.e.d.c.AuthenticationController [main] authenticationRequest for  authenticate
+2019-08-28 14:33:25,594 INFO c.e.d.c.AuthenticationController [main] token generated succesfully : eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6InVzZXIiLCJzdWIiOiJkaW5hIiwiaWF0IjoxNTY2OTgzMDA0LCJleHAiOjE1NjcwMDEwMDR9.nWngBQ_tsFtuayT9b7jcrcJGFcS1NyeAkUVDluWpDrytJ_NPDD2pU5Gm0NCv4F85clObsqMb5y5iI5GQxHuAIg
+2019-08-28 14:33:26,048 INFO c.e.d.c.CartController [main] Items added succesfully to cart
+2019-08-28 14:33:26,051 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-28 14:33:26,053 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-28 14:33:26,055 ERROR c.e.d.c.CartController [main] User not found in database
+2019-08-28 14:33:26,057 INFO c.e.d.c.CartController [main] Items removed succesfully to cart
+2019-08-28 14:33:26,059 ERROR c.e.d.c.CartController [main] Item not found in database
+2019-08-28 14:33:26,063 ERROR c.e.d.c.ItemController [main] Items found
+2019-08-28 14:33:26,067 ERROR c.e.d.c.ItemController [main] No items found
+2019-08-28 14:33:26,268 WARN c.e.d.c.JwtRequestFilter [main] JWT Token does not begin with Bearer String
+2019-08-28 14:33:26,521 ERROR c.e.d.s.JwtUserDetailsService [main] User not found with username:
+2019-08-28 14:33:26,607 ERROR c.e.d.c.OrderController [main] User dina not available in database
+2019-08-28 14:33:26,609 INFO c.e.d.c.OrderController [main] User dina found in database
+2019-08-28 14:33:26,615 INFO c.e.d.c.OrderController [main] order saved to db
+2019-08-28 14:33:26,618 INFO c.e.d.c.OrderController [main] User dina found in database!
+2019-08-28 14:33:26,620 ERROR c.e.d.c.OrderController [main] User dina not found in database!
+2019-08-28 14:33:26,631 INFO c.e.d.c.UserController [main] username : dina
+2019-08-28 14:33:26,631 INFO c.e.d.c.UserController [main] user created and saved to database

@@ -69,4 +69,15 @@ public class ItemControllerTest {
         Assert.assertTrue(200 == responseEntity.getStatusCodeValue());
     }
 
+    @Test
+    public void getItemsByNameNULL(){
+        Item item = new Item();
+        item.setDescription("item is hot");
+        List<Item> items = new ArrayList<>();
+        items.add(item);
+        Mockito.when(itemRepository.findByName("item")).thenReturn(null);
+        ResponseEntity<List<Item>> responseEntity = itemController.getItemsByName("item");
+        Assert.assertTrue(404 == responseEntity.getStatusCodeValue());
+    }
+
 }

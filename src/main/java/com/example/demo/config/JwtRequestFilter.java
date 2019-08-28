@@ -26,7 +26,7 @@ public class JwtRequestFilter extends OncePerRequestFilter{
     private JwtUserDetailsService jwtUserDetailsService;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+    public void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
         final String requestTokenHeader = request.getHeader("access_token");
         String username = null;
