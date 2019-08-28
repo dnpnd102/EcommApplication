@@ -332,3 +332,8 @@ insert into user_profile (id, password, username) values (null, ?, ?) [23505-199
 2019-08-28 10:40:37,747 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
 2019-08-28 10:40:43,699 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
 2019-08-28 10:40:44,781 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.653 seconds (JVM running for 9.525)
+2019-08-28 10:44:34,169 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on Dinanath-Pande with PID 5672 (D:\EcommApplication\target\classes started by Dinanath.Pandey in D:\EcommApplication)
+2019-08-28 10:44:34,182 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-08-28 10:44:34,184 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2019-08-28 10:44:39,955 DEBUG c.e.d.c.JwtRequestFilter [main] Filter 'jwtRequestFilter' configured for use
+2019-08-28 10:44:41,030 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 7.444 seconds (JVM running for 9.385)
